@@ -39,7 +39,7 @@ class _BottomSectionState extends State<BottomSection> {
                   radius: 40,
                   animation: true,
                   animationDuration: 300,
-                  percent: widget.isLastScreen ? 1 : 0.5,
+                  percent: widget.isLastScreen ? 1 : 0.3,
                   animateFromLastPercent: true,
                   progressColor: ColorPallete.mainColor,
                   backgroundColor: Colors.grey.shade300,
