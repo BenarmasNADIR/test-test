@@ -5,41 +5,65 @@ class SecondBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        color: Colors.white,
-        padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
+    final screenSize = MediaQuery.of(context).size;
+
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFF00c6ff), Color(0xFF0072ff)],
+          ),
+        ),
         child: Column(
           children: [
-            Image.asset("assets/logo.png", width: 90),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image.asset(
-                "assets/second.png",
-                width: MediaQuery.of(context).size.height * 0.5,
-              ),
+            const SizedBox(height: 80),
+
+            // 📌 Bigger Image
+            Image.asset(
+              "assets/group335.png",
+              width: screenSize.width * 1,
+              height: screenSize.height * 0.55,
+              fit: BoxFit.contain,
             ),
-            const Text(
-              "@ mohab",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'roboto',
-                color: Colors.black,
-                decoration: TextDecoration.none,
+
+            // 📌 Rounded Container for Text
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(40)),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black12, blurRadius: 10, spreadRadius: 2)
+                  ],
+                ),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                child: const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      "Test yout knowledge \n with QuizPi!",
+                      style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Lorem Ipsum Lorem Ipsum Lorem\n"
+                      "Ipsum Lorem Ipsum Lorem Ipsum\n"
+                      "Lorem Ipsum Lorem Ipsum",
+                      style: TextStyle(fontSize: 16, color: Colors.black54),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              "We are in your assist",
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.black54,
-                decoration: TextDecoration.none,
-              ),
-              textAlign: TextAlign.center,
             ),
           ],
         ),

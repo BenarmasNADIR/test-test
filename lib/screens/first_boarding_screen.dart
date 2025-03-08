@@ -5,48 +5,66 @@ class FirstBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        color: Colors.white,
-        padding: const EdgeInsets.only(top: 10),
+    final screenSize = MediaQuery.of(context).size;
+
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFF00c6ff), Color(0xFF0072ff)],
+          ),
+        ),
         child: Column(
           children: [
+            const SizedBox(height: 80),
+
+            // 📌 Bigger Image
             Image.asset(
-              "assets/logo.png",
-              width: 90,
+              "assets/group336.png",
+              width: screenSize.width * 1,
+              height: screenSize.height * 0.55,
+              fit: BoxFit.contain,
             ),
-            const SizedBox(
-              height: 40,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image.asset(
-                "assets/first.png",
-                width: MediaQuery.of(context).size.height * 0.4,
+
+            // 📌 Rounded Container for Text
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(40)),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black12, blurRadius: 10, spreadRadius: 2)
+                  ],
+                ),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                child: const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      "Welcome To QuizPi!",
+                      style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Lorem Ipsum Lorem Ipsum Lorem\n"
+                      "Ipsum Lorem Ipsum Lorem Ipsum\n"
+                      "Lorem Ipsum Lorem Ipsum",
+                      style: TextStyle(fontSize: 16, color: Colors.black54),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
             ),
-            const SizedBox(
-              height: 2,
-            ),
-            const Text(
-              "All Groceries!",
-              style: TextStyle(
-                  fontSize: 25,
-                  fontFamily: 'roboto',
-                  color: Colors.black,
-                  decoration: TextDecoration.none),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const Text(
-              "All what u want in one app",
-              style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.black54,
-                  decoration: TextDecoration.none),
-              textAlign: TextAlign.center,
-            )
           ],
         ),
       ),
