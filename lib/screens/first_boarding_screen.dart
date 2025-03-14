@@ -22,7 +22,7 @@ class FirstBoardingScreen extends StatelessWidget {
 
             // 📌 Bigger Image
             Image.asset(
-              "assets/group336.png",
+              "assets/images/group336.png",
               width: screenSize.width * 1,
               height: screenSize.height * 0.55,
               fit: BoxFit.contain,

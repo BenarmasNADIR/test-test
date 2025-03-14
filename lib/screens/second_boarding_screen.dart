@@ -22,7 +22,7 @@ class SecondBoardingScreen extends StatelessWidget {
 
             // 📌 Bigger Image
             Image.asset(
-              "assets/group335.png",
+              "assets/images/group335.png",
               width: screenSize.width * 1,
               height: screenSize.height * 0.55,
               fit: BoxFit.contain,

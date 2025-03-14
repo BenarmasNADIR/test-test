@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'forgot_password.dart'; // Import Forgot Password Screen
+import 'package:flutter_application_132/home.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -109,7 +110,13 @@ class _LoginPageState extends State<LoginPage> {
                     width: double.infinity,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreen()),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.all(12),
                         shape: RoundedRectangleBorder(

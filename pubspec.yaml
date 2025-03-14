@@ -33,14 +33,18 @@ dependencies:
     sdk: flutter
   percent_indicator: ^4.2.3
   smooth_page_indicator: ^1.1.0
+  http: ^0.13.3
+  shared_preferences: ^2.0.8  # To store JWT token
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   introduction_screen: ^3.1.17
+  curved_navigation_bar: ^1.0.6
 
 dev_dependencies:
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
+    
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -58,10 +62,30 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
   assets:
-    - assets/
-    - assets/group336.png
-    - assets/group335.png
+    - assets/images/  # Includes all images in the 'images' folder
+    - assets/fonts/    # Includes all font files in the 'fonts' folder
+
+  fonts:
+    - family: ChalkboardSE
+      fonts:
+        - asset: assets/fonts/ChalkboardSE-Bold-03_0.ttf
+          weight: 700
+        - asset: assets/fonts/ChalkboardSE-Light-01_0.ttf
+          weight: 300
+        - asset: assets/fonts/ChalkboardSE-Regular-02_0.ttf
+        - asset: assets/fonts/chalkboardse.otf
+
+    - family: Georgia
+      fonts:
+        - asset: assets/fonts/georgia.ttf
+        - asset: assets/fonts/georgiab.ttf
+          weight: 700
+        - asset: assets/fonts/georgiai.ttf
+          style: italic
+        - asset: assets/fonts/georgiaz.ttf
+    
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
